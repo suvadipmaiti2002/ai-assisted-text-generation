@@ -1,0 +1,37 @@
+{
+  "name": "ai-assisted-text-generation",
+  "version": "1.0.0",
+  "description": "AI-Assisted Text Classification and Email Template Generation Microservices using Node.js, Express, TypeScript, and Google Gemini SDK",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "express",
+    "typescript",
+    "gemini",
+    "google-genai",
+    "text-classification",
+    "email-generator"
+  ],
+  "author": "Suvadip Maiti",
+  "license": "ISC",
+  "dependencies": {
+    "@google/genai": "^2.25.0",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.3",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.5",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
+  }
+}

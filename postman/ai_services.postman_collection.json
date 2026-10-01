@@ -1,0 +1,90 @@
+{
+  "info": {
+    "name": "AI Text Services",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Classify Text - Complaint",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"text\": \"My package was supposed to arrive yesterday, but tracking says it is lost. Can someone help?\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/classify",
+          "host": ["{{baseUrl}}"],
+          "path": ["classify"]
+        }
+      }
+    },
+    {
+      "name": "Classify Text - Query",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"text\": \"Where can I find my invoice for last month's subscription?\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/classify",
+          "host": ["{{baseUrl}}"],
+          "path": ["classify"]
+        }
+      }
+    },
+    {
+      "name": "Generate Email Template",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"purpose\": \"Apologizing for late shipment and offering 15% discount\",\n  \"recipient_name\": \"Alex Morgan\",\n  \"tone\": \"polite and professional\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/email/generate",
+          "host": ["{{baseUrl}}"],
+          "path": ["email", "generate"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:4000/api/v1",
+      "type": "string"
+    }
+  ]
+}
